@@ -1,0 +1,8 @@
+*.log
+*.pot
+*.pyc
+__pycache__
+catalog/migrations/
+locallibrary/__pycache__/settings.cpython-38.pyc
+locallibrary/settings.py
+
