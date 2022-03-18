@@ -1,0 +1,8 @@
+*.log
+*.pot
+*.pyc
+__pycache__
+catalog/migrations/
+locallibrary/settings.py
+locallibrary/__pycache__/
+
