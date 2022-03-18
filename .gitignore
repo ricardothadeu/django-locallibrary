@@ -1,7 +1,0 @@
-*.log
-*.pot
-*.pyc
-__pycache__
-catalog/migrations/
-locallibrary/settings.py
-
