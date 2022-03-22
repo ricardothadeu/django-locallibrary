@@ -34,4 +34,9 @@ def index(request):
 
 
 class BookListView(generic.ListView):
+    """Generic class-based view for a list of books."""
+    model = Book
+
+class BookDetailView(generic.DetailView):
+    """Generic class-based detail view for a book."""
     model = Book
