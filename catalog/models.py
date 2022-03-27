@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 import uuid
+from django.template.defaultfilters import slugify
 
 # Create your models here.
 class Genre(models.Model):
@@ -41,6 +42,9 @@ class Book(models.Model):
     # ManyToManyField used because genre can contain many books. Books can cover many genres.
     # Genre class has already been defined so we can specify the object above.
     genre = models.ManyToManyField(Genre, help_text='Select a genre for this book')
+
+    class Meta:
+        ordering = ['title']
 
     def __str__(self):
         """String for representing the Model object."""
