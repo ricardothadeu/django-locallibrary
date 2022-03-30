@@ -3,7 +3,7 @@
 {% block content %} 
     <h1>Author List</h1>
     {% if author_list %}
-   
+
     <ul>
         {% for author in author_list %} 
         <li>
@@ -14,4 +14,10 @@
     {% else %} 
         <p>There is no authors in the library.</p>
     {% endif %} 
+
+    {% if perms.catalog.can_mark_returned %}
+    <a href="{% url 'author-create' %}">
+        <button type="button" class="btn btn-success">New Author</button>
+    </a>
+    {% endif %}
 {% endblock %}

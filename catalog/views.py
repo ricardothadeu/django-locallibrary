@@ -1,4 +1,3 @@
-from ast import Delete
 import datetime
 
 from .models import Book, Author, BookInstance
@@ -54,7 +53,7 @@ def index(request):
 class BookListView(generic.ListView):
     """Generic class-based view for a list of books."""
     model = Book
-    paginate_by = 5
+    paginate_by = 10
 
 class BookDetailView(generic.DetailView):
     """Generic class-based detail view for a book."""
@@ -63,7 +62,7 @@ class BookDetailView(generic.DetailView):
 class AuthorListView(generic.ListView):
     """Generic class-based view for a list of authorsm."""
     model = Author
-    paginate_by = 5
+    paginate_by = 10
 
 class AuthorDetailView(generic.DetailView):
     """Generic class bases detail view for a author."""
@@ -133,4 +132,19 @@ class AuthorUpdate(PermissionRequiredMixin, UpdateView):
 class AuthorDelete(PermissionRequiredMixin, DeleteView):
     model = Author
     success_url = reverse_lazy('authors')
+    permission_required = 'catalog.can_mark_returned'
+
+class BookCreate(PermissionRequiredMixin, CreateView):
+    model = Book
+    fields = ['title', 'author', 'isbn', 'language', 'summary', 'genre']
+    permission_required = 'catalog.can_mark_returned'
+
+class BookUpdate(PermissionRequiredMixin, UpdateView):
+    model = Book
+    fields = ['title', 'author', 'isbn', 'language', 'summary', 'genre']
+    permission_required = 'catalog.can_mark_returned'
+
+class BookDelete(PermissionRequiredMixin, DeleteView):
+    model = Book
+    success_url = reverse_lazy('books')
     permission_required = 'catalog.can_mark_returned'

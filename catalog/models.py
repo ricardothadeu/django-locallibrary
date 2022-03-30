@@ -36,7 +36,9 @@ class Book(models.Model):
 
     summary = models.CharField(max_length=1500, help_text='Enter a brief description of the book')
 
-    isbn = models.CharField('ISBN', max_length=13, unique=True, help_text='13 Character <a href="https://www.isbn-international.org/content/what-isbn">ISBN number</a>')
+    isbn = models.CharField('ISBN', max_length=13,
+                            unique=True,
+                            help_text='13 Character ISBN number')
 
     language = models.ForeignKey('Language', on_delete=models.SET_NULL, null=True)
 
