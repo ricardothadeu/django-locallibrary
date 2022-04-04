@@ -1,5 +1,5 @@
 from django.test import TestCase
-from catalog.models import Author
+from catalog.models import Author, Book
 
 class AuthorModelTest(TestCase):
     @classmethod
@@ -36,7 +36,7 @@ class AuthorModelTest(TestCase):
         author = Author.objects.get(id=1)
         max_lenght = author._meta.get_field('last_name').max_length
         self.assertEqual(max_lenght, 100)
-        
+
     def test_object_name_is_last_name_comma_first_name(self):
         author = Author.objects.get(id=1)
         expected_object_name = f'{author.last_name}, {author.first_name}'
