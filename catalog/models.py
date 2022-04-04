@@ -34,7 +34,7 @@ class Book(models.Model):
     # Author as a string rather than object because it hasn't been declared yet in the file
     author = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True)
 
-    summary = models.CharField(max_length=1500, help_text='Enter a brief description of the book')
+    summary = models.CharField(max_length=1500, help_text='Enter a brief description of the book', )
 
     isbn = models.CharField('ISBN', max_length=13,
                             unique=True,
