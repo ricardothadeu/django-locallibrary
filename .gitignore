@@ -7,4 +7,5 @@ locallibrary/settings.py
 locallibrary/__pycache__/
 manage.py
 venv/
+.env
 
