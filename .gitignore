@@ -3,9 +3,7 @@
 *.pyc
 __pycache__
 catalog/migrations/
-locallibrary/settings.py
 locallibrary/__pycache__/
-manage.py
 venv/
 .env
 
