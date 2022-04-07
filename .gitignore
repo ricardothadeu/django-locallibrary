@@ -2,7 +2,6 @@
 *.pot
 *.pyc
 __pycache__
-catalog/migrations/
 locallibrary/__pycache__/
 venv/
 .env
